@@ -1,0 +1,24 @@
+QCM:
+Question 1 -> C)Créer et modifier des tables dans la base de données
+Question 3-> B) php artisan migrate
+Question 4-> B) Route::get('/chemin', NomControleur::class)
+Question 5-> A) hasMany()
+
+1)
+php artisan make:model Eleve
+php artisan make:model Club
+php artisan make:model Activite
+php artisan make:migration create_eleves_table
+php artisan make:migration create_clubs_table
+php artisan make:migration create_activities_table
+4)
+php artisan make:seeder EleveSeeder
+php artisan make:seeder ClubSeeder
+php artisan make:seeder ActiviteSeeder
+5)
+php artisan migrate
+php artisan db:seed
+6)
+php artisan make:controller EleveContorller --resource
+php artisan make:controller ClubController --resource
+php artisan make:controller ActiviteController  --resource
