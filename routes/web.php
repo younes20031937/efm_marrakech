@@ -1,10 +1,10 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\EleveController;
+use App\Http\Controllers\EvenementController;
 
 Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get("/eleves" , [EleveController::class , "index"])->name("eleves.index");
+Route::resource('evenements', EvenementController::class);

@@ -2,17 +2,23 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Controllers\Controller;
+use App\Models\Type;
+use App\Models\Evenement;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 
-class ClubController extends Controller
+class EvenementController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        //
+        $evenements = Evenement::all();
+        $types = Type::join("types" , "types.id" , "=","evenements.type_id")
+                        ->select("types.titre")
+                        ->get();
+        return view("evenements.index" , compact("evenements" , "types"));
     }
 
     /**
